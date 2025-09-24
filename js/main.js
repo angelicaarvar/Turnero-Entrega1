@@ -16,7 +16,7 @@ function validarDNI(dni) {
 
 function solicitarDatos() {
     let nombreCompleto = prompt("Nombre completo: ");
-    let dni = "12345678" //prompt("DNI: ");
+    let dni = prompt("DNI: ");
 
     let dniValido = validarDNI(dni);
 
