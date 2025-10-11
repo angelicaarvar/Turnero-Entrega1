@@ -9,8 +9,7 @@
     <!--Script en HEAD SIEMPRE, tipo norma-->
     <!-- <script defer src="./js/main.js"></script> --> <!--defer carga el JS al finallll recien-->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
 
 
     <link rel="stylesheet" href="./styles/styles.css">
@@ -28,74 +27,72 @@
     </header>
 
     <main>
-        <section class="gestion-pacientes">
-            <h2>Gestor de pacientes</h2>
-            <div class="boton-container">
+        <section class="contenedor">
 
-                <button class="boton agregar-paciente" id="agregar-paciente">Agregar paciente</button>
+            <section class="gestion-pacientes">
+                <h2>Gestor de pacientes</h2>
+                <div class="boton-container">
 
-                <button class="boton atender-paciente">Atender paciente</button>
-            </div>
+                    <button class="boton agregar-paciente" id="agregar-paciente">Agregar paciente</button>
 
-
-
-            <!-- Agrego modal porque lo descubri en la herramienta que nos dieron en el curso de Desarrollo Web, W3Schools -->
-            <div id="modal" class="modal">
-
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <span class="close">&times;</span>
-                        <h2>Agregar paciente</h2>
-                        <p>Ingrese los datos del paciente para agregarlo a la cola de espera.</p>
-                    </div>
-
-                    <div class="modal-body">
-                        <form id="formulario-paciente">
-                            <label for="formulario-paciente-nombre">Nombre completo:</label>
-                            <input type="text" id="formulario-paciente-nombre" name="nombre" required>
-
-                            <label for="formulario-paciente-dni">DNI:</label>
-                            <input type="text" id="formulario-paciente-dni" name="dni" required>
-
-                            <label for="formulario-paciente-motivo">Motivo de consulta:</label>
-                            <input type="text" id="formulario-paciente-motivo" name="motivo" required>
-                        </form>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="submit" class="boton">Agregar paciente</button>
-                    </div>
-
+                    <button class="boton atender-paciente">Atender paciente</button>
                 </div>
-            </div>
-            
 
-            <div>
-                <a href="pages/historial.html" class="boton-historial-volver" title="Historial de pacientes">
-                    Historial de pacientes
-                </a>
-            </div>
 
-            <div class="section-tabla-pacientes">
-                <table class="table table-striped pacientes-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nombre completo</th>
-                            <th scope="col">DNI</th>
-                            <th scope="col">Hora de ingreso</th>
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        <!-- Aca van los pacientes -->
-                    </tbody>
+                <!-- Agrego modal porque lo descubri en la herramienta que nos dieron en el curso de Desarrollo Web, W3Schools 
+                <div id="modal" class="modal">
 
-                </table>
-            </div>
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>Agregar paciente</h2>
+                            <p>Ingrese los datos del paciente para agregarlo a la cola de espera.</p>
+                        </div>
+
+                        <div class="modal-body">
+                            <form id="formulario-paciente">
+                                <label for="formulario-paciente-nombre">Nombre completo:</label>
+                                <input type="text" id="formulario-paciente-nombre" name="nombre" required>
+
+                                <label for="formulario-paciente-dni">DNI:</label>
+                                <input type="text" id="formulario-paciente-dni" name="dni" required>
+
+                                <label for="formulario-paciente-motivo">Motivo de consulta:</label>
+                                <input type="text" id="formulario-paciente-motivo" name="motivo" required>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="boton">Agregar paciente</button>
+                        </div>
+
+                    </div>
+                </div> -->
+
+
+                <div>
+                    <a href="pages/historial.html" class="boton-historial-volver" title="Historial de pacientes">
+                        Historial de pacientes
+                    </a>
+                </div>
+            </section>
+
+            <section class="lista-espera" id="lista-espera">
+                <h2>Lista de espera</h2>
+                <div class="card-paciente">
+                    <div class="informacion-paciente">
+                        <p class="nombre-paciente">NombrePrueba</p>
+                        <p class="dni-paciente">dniPrueba</p>
+                    </div>
+                    <div class="hora-paciente">
+                        <p class="hora-ingreso">123</p>
+                    </div>
+                </div>
+            </section>
+
         </section>
-
-
     </main>
 
     <footer>

@@ -6,28 +6,33 @@
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-h1{
+h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(36, 46, 161);
 }
-h2{
+
+h2 {
     font-family: 'Times New Roman', Times, serif;
     color: rgb(19, 19, 107);
     text-align: center;
 }
 
-p, li, a, button{
+p,
+li,
+a,
+button {
     font-family: 'Montserrat';
     color: #000000;
+    margin-bottom: 0;
 }
 
 /*Header*/
 
-header{
+header {
     background-color: #e1e1e1;
     display: flex;
     position: sticky;
@@ -40,28 +45,38 @@ header{
 }
 
 /*Footer */
-footer{
+footer {
     background-color: #e1e1e1;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
 }
 
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
 /*Main*/
-.gestion-pacientes, .historial-pacientes-section{
+.gestion-pacientes,
+.historial-pacientes-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
-    gap: 1rem;
+    margin-top: 1rem;
     text-align: center;
+    gap: 1rem;
 }
 
-.boton-container{
+.boton-container {
     display: flex;
     gap: .5rem;
 }
-.boton{
+
+.boton {
     background-color: #a7badf9d;
     color: rgb(0, 0, 0);
     border: none;
@@ -70,32 +85,46 @@ footer{
     border-radius: 10px;
     padding: .5rem;
 
-    width: 20vw;
-
     transition-duration: 0.2s;
 }
-.boton:hover{
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.6);
+
+.boton:hover {
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.6);
 }
 
 .boton-historial-volver {
-    text-decoration:  underline;
+    text-decoration: underline;
 }
+
 .boton-historial-volver:hover {
     color: rgb(8, 8, 143);
 }
 
 
-.pacientes-table{
-    border-collapse: collapse;
-    text-align: center;
-    width: 50vw;
+
+
+/* Seccion Lista de espera */
+
+.lista-espera {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+
 }
-td, th{
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+
+.card-paciente {
+    background-color: rgb(219, 219, 219);
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1.2rem .5rem 1.2rem;
+    border-radius: .5rem;
 }
-/* tr:nth-child(even){
-    background-color: #dddddd;
-}  */
+
+.informacion-paciente {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
