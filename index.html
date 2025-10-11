@@ -1,14 +1,135 @@
 <!DOCTYPE html>
 <html lang="es-ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso JavaScript</title>
 
     <!--Script en HEAD SIEMPRE, tipo norma-->
-    <script defer src="./js/main.js"></script> <!--defer carga el JS al finallll recien-->
+    <!-- <script defer src="./js/main.js"></script> --> <!--defer carga el JS al finallll recien-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
-    <h1>Argañaraz Vargas Angélica</h1>
+    <header>
+        <div>
+            <a href="index.html" title="Inicio">
+                <h1>Clínica médica</h1>
+            </a>
+        </div>
+
+
+    </header>
+
+    <main>
+        <section class="gestion-pacientes">
+            <h2>Gestor de pacientes</h2>
+            <div class="boton-container">
+
+                <button class="boton agregar-paciente" id="agregar-paciente">Agregar paciente</button>
+
+                <button class="boton atender-paciente">Atender paciente</button>
+            </div>
+
+
+
+            <!-- Agrego modal porque lo descubri en la herramienta que nos dieron en el curso de Desarrollo Web, W3Schools -->
+            <div id="modal" class="modal">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Agregar paciente</h2>
+                        <p>Ingrese los datos del paciente para agregarlo a la cola de espera.</p>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="formulario-paciente">
+                            <label for="formulario-paciente-nombre">Nombre completo:</label>
+                            <input type="text" id="formulario-paciente-nombre" name="nombre" required>
+
+                            <label for="formulario-paciente-dni">DNI:</label>
+                            <input type="text" id="formulario-paciente-dni" name="dni" required>
+
+                            <label for="formulario-paciente-motivo">Motivo de consulta:</label>
+                            <input type="text" id="formulario-paciente-motivo" name="motivo" required>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="boton">Agregar paciente</button>
+                    </div>
+
+                </div>
+            </div>
+            
+
+            <div>
+                <a href="pages/historial.html" class="boton-historial-volver" title="Historial de pacientes">
+                    Historial de pacientes
+                </a>
+            </div>
+
+            <div class="section-tabla-pacientes">
+                <table class="table table-striped pacientes-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre completo</th>
+                            <th scope="col">DNI</th>
+                            <th scope="col">Hora de ingreso</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <!-- Aca van los pacientes -->
+                    </tbody>
+
+                </table>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>Argañaraz Vargas Angélica - Comisión 80805</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
+
+
+<!-- <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    
+    
+    Asio se agregan los pacientes a la fila-->

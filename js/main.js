@@ -6,7 +6,7 @@ function validarDNI(dni) {
 
     let esValido = true
 
-    if (dni.length != 8) {2
+    if (dni.length != 8) {
         esValido = false
     }
 
