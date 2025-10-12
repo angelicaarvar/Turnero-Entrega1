@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial de pacientes</title>
 
-    <!-- <script defer src="../js/main.js"></script> -->
+    <script defer src="../js/historial.js"></script>
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,7 +35,7 @@
                 </p>
             </div>
             <div class="section-tabla-pacientes">
-                <table class="table table-striped pacientes-table">
+                <table class="table table-striped pacientes-table" id="tabla-historial">
                     <thead>
                         <tr>
                             <th scope="col">Nombre completo</th>
@@ -44,9 +44,10 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <!-- Aca van los pacientes -->
+                    <tbody id="tabla-historial-body">
+
                     </tbody>
+
 
                 </table>
             </div>

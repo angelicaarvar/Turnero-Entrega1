@@ -7,9 +7,9 @@
     <title>Curso JavaScript</title>
 
     <!--Script en HEAD SIEMPRE, tipo norma-->
-    <!-- <script defer src="./js/main.js"></script> --> <!--defer carga el JS al finallll recien-->
+    <script defer src="./js/main.js"></script> <!--defer carga el JS al finallll recien-->
 
-    
+
 
 
     <link rel="stylesheet" href="./styles/styles.css">
@@ -31,17 +31,20 @@
 
             <section class="gestion-pacientes">
                 <h2>Gestor de pacientes</h2>
+
                 <div class="boton-container">
 
-                    <button class="boton agregar-paciente" id="agregar-paciente">Agregar paciente</button>
+                    <button class="boton agregar-paciente" id="btn-abrir-modal-agregar-paciente">Agregar
+                        paciente</button>
 
-                    <button class="boton atender-paciente">Atender paciente</button>
+                    <button id="btn-abrir-modal-atender-paciente" class="boton btn-atender-paciente" disabled>Atender
+                        paciente</button>
                 </div>
 
 
 
-                <!-- Agrego modal porque lo descubri en la herramienta que nos dieron en el curso de Desarrollo Web, W3Schools 
-                <div id="modal" class="modal">
+                <!-- Agrego modal porque lo descubri en la herramienta que nos dieron en el curso de Desarrollo Web, W3Schools -->
+                <div id="modal-agregar-paciente" class="modal">
 
                     <div class="modal-content">
 
@@ -53,27 +56,61 @@
 
                         <div class="modal-body">
                             <form id="formulario-paciente">
-                                <label for="formulario-paciente-nombre">Nombre completo:</label>
-                                <input type="text" id="formulario-paciente-nombre" name="nombre" required>
+                                <div class="elemento-formulario">
+                                    <label for="formulario-paciente-nombre" >Nombre completo</label>
+                                    <input type="text" id="formulario-paciente-nombre" name="nombre" placeholder=" Ingrese el nombre" required>
+                                    <p id="error-msj-nombre" class="mensaje-error">Nombre no puede estar vacio</p>
+                                </div>
 
-                                <label for="formulario-paciente-dni">DNI:</label>
-                                <input type="text" id="formulario-paciente-dni" name="dni" required>
+                                <div class="elemento-formulario">
+                                    <label for="formulario-paciente-dni">DNI</label>
+                                    <input type="text" id="formulario-paciente-dni" name="dni" placeholder=" Ingrese número de DNI sin puntos ni espacios" required>
+                                    <p id="error-msj-dni" class="mensaje-error">Formato de DNI invalido (ingresar sin puntos)</p>
+                                </div>
 
-                                <label for="formulario-paciente-motivo">Motivo de consulta:</label>
-                                <input type="text" id="formulario-paciente-motivo" name="motivo" required>
+
+                                <div class="elemento-formulario">
+                                    <label for="formulario-paciente-motivo">Motivo de consulta:</label>
+                                    <input type="text" id="formulario-paciente-motivo" name="motivo" placeholder=" Ingrese el motivo de consulta" required>
+                                    <p id="error-msj-motivo" class="mensaje-error">Motivo no puede estar vacio</p>
+                                </div>
+
+
                             </form>
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" class="boton">Agregar paciente</button>
+                            <button id="btn-confirmar-paciente" class="boton">Confirmar</button>
                         </div>
 
                     </div>
-                </div> -->
+                </div>
+
+
+                <div id="modal-atender-paciente" class="modal">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h3>Atención Clinica</h3>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>¿Atender paciente: <span id="nombre-paciente-atender"></span> ?</p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button id="btn-atender-paciente" class="boton">Confirmar</button>
+                        </div>
+
+                    </div>
+                </div>
 
 
                 <div>
-                    <a href="pages/historial.html" class="boton-historial-volver" title="Historial de pacientes">
+                    <a href="pages/historial.html" class="boton-historial-volver" id="btn-historial"
+                        title="Historial de pacientes">
                         Historial de pacientes
                     </a>
                 </div>
@@ -81,14 +118,8 @@
 
             <section class="lista-espera" id="lista-espera">
                 <h2>Lista de espera</h2>
-                <div class="card-paciente">
-                    <div class="informacion-paciente">
-                        <p class="nombre-paciente">NombrePrueba</p>
-                        <p class="dni-paciente">dniPrueba</p>
-                    </div>
-                    <div class="hora-paciente">
-                        <p class="hora-ingreso">123</p>
-                    </div>
+                <div id="contenedor-card-pacientes">
+
                 </div>
             </section>
 
