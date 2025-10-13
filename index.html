@@ -9,9 +9,6 @@
     <!--Script en HEAD SIEMPRE, tipo norma-->
     <script defer src="./js/main.js"></script> <!--defer carga el JS al finallll recien-->
 
-
-
-
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
@@ -57,22 +54,25 @@
                         <div class="modal-body">
                             <form id="formulario-paciente">
                                 <div class="elemento-formulario">
-                                    <label for="formulario-paciente-nombre" >Nombre completo</label>
-                                    <input type="text" id="formulario-paciente-nombre" name="nombre" placeholder=" Ingrese el nombre" required>
-                                    <p id="error-msj-nombre" class="mensaje-error">Nombre no puede estar vacio</p>
+                                    <label for="formulario-paciente-nombre">Nombre completo</label>
+                                    <input type="text" id="formulario-paciente-nombre" name="nombre"
+                                        placeholder="Ingrese el nombre" required>
+                                    <p id="error-msj-nombre" class="mensaje-error">⚠ Nombre no puede estar vacio</p>
                                 </div>
 
                                 <div class="elemento-formulario">
                                     <label for="formulario-paciente-dni">DNI</label>
-                                    <input type="text" id="formulario-paciente-dni" name="dni" placeholder=" Ingrese número de DNI sin puntos ni espacios" required>
-                                    <p id="error-msj-dni" class="mensaje-error">Formato de DNI invalido (ingresar sin puntos)</p>
+                                    <input type="text" id="formulario-paciente-dni" name="dni"
+                                        placeholder="Ingrese número de DNI sin puntos ni espacios" required>
+                                    <p id="error-msj-dni" class="mensaje-error">⚠ Formato de DNI invalido</p>
                                 </div>
 
 
                                 <div class="elemento-formulario">
                                     <label for="formulario-paciente-motivo">Motivo de consulta:</label>
-                                    <input type="text" id="formulario-paciente-motivo" name="motivo" placeholder=" Ingrese el motivo de consulta" required>
-                                    <p id="error-msj-motivo" class="mensaje-error">Motivo no puede estar vacio</p>
+                                    <input type="text" id="formulario-paciente-motivo" name="motivo"
+                                        placeholder="Ingrese el motivo de consulta" required>
+                                    <p id="error-msj-motivo" class="mensaje-error">⚠ Motivo no puede estar vacio</p>
                                 </div>
 
 
@@ -93,11 +93,11 @@
 
                         <div class="modal-header">
                             <span class="close">&times;</span>
-                            <h3>Atención Clinica</h3>
+                            <h2>Atención Clinica</h2>
                         </div>
 
                         <div class="modal-body">
-                            <p>¿Atender paciente: <span id="nombre-paciente-atender"></span> ?</p>
+                            <p>¿Atender paciente: <span id="nombre-paciente-atender"></span>?</p>
                         </div>
 
                         <div class="modal-footer">
@@ -130,34 +130,7 @@
         <p>Argañaraz Vargas Angélica - Comisión 80805</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
 
 </body>
 
 </html>
-
-
-<!-- <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    
-    
-    Asio se agregan los pacientes a la fila-->

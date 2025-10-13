@@ -1,5 +1,8 @@
+//Eventos
+let botonEliminarHistorial = document.getElementById("btn-eliminar-historial");
+botonEliminarHistorial.addEventListener("click", eliminarHistorial)
 
-
+//Renderizado del local Storage
 function renderizarHistorialPacientes(){
     const tablaHistorialCuerpo = document.getElementById("tabla-historial-body");
     tablaHistorialCuerpo.innerHTML = '';
@@ -10,6 +13,7 @@ function renderizarHistorialPacientes(){
 
     if(pacientesAtendidos.length === 0){
         document.getElementById("tabla-historial").innerHTML = '<p class="mensaje-cola-vacia">Todavía no se atendieron pacientes.</p>';
+        botonEliminarHistorial.style.display = "none";
     }
     
     pacientesAtendidos.forEach((paciente) => {
@@ -32,6 +36,16 @@ function renderizarHistorialPacientes(){
         tablaHistorialCuerpo.appendChild(filaPaciente);
     });
 }  
+
+//eliminar Historial
+function eliminarHistorial(){
+    const pacientes = JSON.parse(localStorage.getItem("pacientes")) || [];
+    const pacientesNoAtendidos = pacientes.filter((paciente) => !paciente.atendido);
+
+    localStorage.setItem("pacientes", JSON.stringify(pacientesNoAtendidos));
+
+    renderizarHistorialPacientes();
+}
 
 
 renderizarHistorialPacientes();

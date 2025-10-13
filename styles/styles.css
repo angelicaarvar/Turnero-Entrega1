@@ -6,6 +6,18 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+main {
+    height: 100vh;
+}
+
 a {
     text-decoration: none;
 }
@@ -25,15 +37,21 @@ p,
 li,
 a,
 button,
-label {
+label,
+table {
     font-family: 'Montserrat';
     color: #000000;
     margin-bottom: 0;
 }
-input{
+
+input {
     height: 2.5rem;
     width: 100%;
+    border: 1px solid grey;
+    border-radius: .7rem;
+    padding-left: 1rem;
 }
+
 
 /*Header*/
 
@@ -48,6 +66,7 @@ header {
 
     padding: 1.5rem;
 }
+
 
 /*Footer */
 footer {
@@ -65,6 +84,7 @@ footer {
     gap: 1.5rem;
 }
 
+
 /*Main*/
 .gestion-pacientes,
 .historial-pacientes-section {
@@ -72,7 +92,6 @@ footer {
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
-    /* text-align: center; */
     gap: 1rem;
 }
 
@@ -96,7 +115,8 @@ footer {
 }
 
 .boton:hover {
-    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 5px 5px 0 rgba(165, 165, 165, 0.6);
+    background-color: #a7badfee;
 }
 
 .boton-historial-volver {
@@ -137,19 +157,42 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: .5rem 1rem .5rem 1rem;
+    border-bottom: 1px solid #00000033;
+
 }
 
 .card-paciente:nth-child(1) {
-    background-color: #d1d1d1;
+    background-color: #4653975b;
     border-left: .2rem solid rgb(6, 20, 221);
+    border-radius: 10px 10px 0 0;
+}
+
+.card-paciente:nth-last-child(1) {
+    border-radius: 0 0 10px 10px;
+    border-bottom: none;
+}
+
+.hora-ingreso{
+    display: flex;
+    gap: .2rem;
+}
+.reloj {
+    width: .9rem;
 }
 
 .informacion-paciente {
     display: flex;
     flex-direction: column;
     gap: .3rem;
+    padding: .3rem;
 }
-
+.nombre-paciente{
+    font-family: 'Montserrat';
+    font-size: 1rem;
+}
+.dni-paciente{
+    font-size: .9rem;
+}
 
 
 
@@ -160,7 +203,7 @@ footer {
     position: fixed;
     z-index: 1;
     padding-top: 100px;
-    
+
     left: 0;
     top: 0;
     width: 100%;
@@ -179,6 +222,7 @@ footer {
     border: 1px solid #888;
     width: 45vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
 
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -195,12 +239,13 @@ footer {
 
 .close:hover,
 .close:focus {
-    color: white;
+    color: rgb(95, 106, 255);
     text-decoration: none;
     cursor: pointer;
 }
 
 .modal-header {
+    border-radius: 10px 10px 0 0;
     text-align: left;
     padding: 1rem;
     align-content: flex-start;
@@ -208,7 +253,8 @@ footer {
     color: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.26);
 }
-.modal-header h2{
+
+.modal-header h2 {
     font-family: 'Montserrat';
     font-size: 1.4rem;
     color: #000b4b;
@@ -218,14 +264,13 @@ footer {
 
 .modal-body {
     font-size: 1.2rem;
-    /* display: flex; */
-    padding: 1rem;
+    padding: 1rem 1rem .3rem 1rem;
     align-items: flex-start;
     border-bottom: 1px solid rgba(0, 0, 0, 0.26);
-    
+
 }
 
-.elemento-formulario{
+.elemento-formulario {
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
@@ -239,7 +284,9 @@ footer {
     justify-content: flex-end;
     padding: 1rem;
     background-color: #eeeeee;
+    border-radius: 0 0 10px 10px;
 }
+
 
 /* Animacion */
 @-webkit-keyframes animatetop {
@@ -266,16 +313,60 @@ footer {
     }
 }
 
+
+/* Errores */
 .valor-ingresado-erroneo {
     border-color: #d93025;
     box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.2);
 }
 
 .mensaje-error {
-    color: #d93025;
-    font-size: 13px;
+    color: #fd1302;
+    font-size: 15px;
+    font-weight: 500;
     margin-top: 5px;
     display: none;
-    /* oculto por defecto */
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat';
+    padding-left: .5rem;
+}
+
+
+/* Seccion Historial */
+#tabla-historial-body {
+    border: 1px solid rgba(0, 0, 0, 0.377);
+}
+
+.header-tabla-historial {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.btn-eliminar-historial:hover {
+    background-color: #fd1302;
+    color: white;
+}
+
+
+/* Tabla de Historial */
+.pacientes-tabla {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.header-tabla-historial {
+    background-color: hsla(0, 0%, 0%, 0.781);
+    color: rgb(236, 236, 236);
+    font-weight: 400;
+
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
